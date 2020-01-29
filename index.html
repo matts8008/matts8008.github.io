@@ -7,6 +7,15 @@ p {
   text-align: center; 
   font-size: 60px; 
 } 
+
+img{ 
+    transform-origin:50% 50%;
+    animation:2s rotateRight infinite linear; 
+}
+
+@keyframes rotateRight{
+    100%{ transform:rotate(360deg); }
+}
 </style> 
 </head> 
 <body> 
@@ -15,7 +24,7 @@ p {
 <marquee behavior="alternate" scrollamount="40"><img src="newks1.png"></marquee>
 <marquee behavior="alternate" scrollamount="15"><img src="newks2.png"></marquee>
 <marquee behavior="alternate" scrollamount="60"><img src="newks3.png"></marquee>
-<marquee behavior="alternate" scrollamount="30"><img src="newks4.png"></marquee>
+
 
 <p id="demo"></p> 
 <script> 
