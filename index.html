@@ -7,25 +7,111 @@ p {
   font-size: 60px; 
 } 
 
-img{ 
+/*img{ 
     transform-origin:50% 50%;
     animation:2s rotateRight infinite linear; 
 }
-
+*/
 @keyframes rotateRight{
     100%{ transform:rotate(180deg); }
 }
+
+html, body {
+height: 100%;
+width: 100%;
+margin: 0;
+padding: 0;
+background-color: #BDC3C7;
+font-family: 'B612';
+}
+.top {
+  background-color: #264356;
+  height: 200px;
+  margin:0;
+  padding:0;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0, .25);
+}
+
+.form {
+  height: 450px;
+  width: 400px;
+  background-color: #fff;
+  margin: -110px auto;
+  border-radius: 10px;
+  color: #666;
+  padding: 0px 0px;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0, .25);
+}
+
+.info {
+  padding: 10px;
+}
+
+h1, h2, p, h3 {
+  text-align: center;
+  padding: 0px;
+  margin: 5px 5px;
+}
+
+h2 {
+  font-family: 'B612', cursive;
+  font-weight: 100;
+}
+
+p.line {
+  margin: 0px auto 20px auto;
+  color: #999;
+}
+
+.form input {
+  font-size: 15px;
+  color: #666;
+  padding: 6px;
+  margin: 25px auto 20px;
+  display: block;
+  width: 75%;  
+}
+
+input:focus {
+  outline: 0;
+}
+
+.button button {
+  display: inline-block;
+  width: 400px;
+}
+button {
+  color: #666;
+  background-color: #ffbdc7;
+  border: none;
+  font-family: 'B612';
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 32px;
+  width: 200px;
+  margin: 20px auto 0px auto; 
+  float:left;
+}
+
+button.accept {
+  border-radius: 0px 0px 0px 10px;
+  border-right: solid 1px #cc919a;
+}
+
+button.regret {
+  border-radius: 0px 0px 10px 0px;
+}
+
+button:hover {
+  background-color: #cc919a;
+  transition: .5s;
+}
+
+button:focus {
+  outline: 0;
+}
 </style> 
 </head> 
-<body> 
-
-
-<marquee behavior="alternate" scrollamount="40"><img src="newks1.png"></marquee>
-<marquee behavior="alternate" scrollamount="15"><img src="newks2.png"></marquee>
-<marquee behavior="alternate" scrollamount="60"><img src="newks3.png"></marquee>
-
-
-<p id="demo"></p> 
 <script> 
 var deadline = new Date("Feb 1, 2020 12:00:00").getTime(); 
 var x = setInterval(function() { 
@@ -36,13 +122,35 @@ var days = Math.floor(t / (1000 * 60 * 60 * 24));
 var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
 var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
 var seconds = Math.floor((t % (1000 * 60)) / 1000); 
-document.getElementById("demo").innerHTML = "<p>Precise number of hours remaining: " + timeleft.toFixed(2); 
+document.getElementById("hoursleft").innerHTML = timeleft.toFixed(2) + " hours"; 
     if (t < 0) { 
         clearInterval(x); 
-        document.getElementById("demo").innerHTML = "NOW"; 
+        document.getElementById("hoursleft").innerHTML = "NOW"; 
     } 
 }, 1000); 
 </script> 
+<body> 
+
+  <div class="top">
+  </div>
+  <div class="form">
+    <div class ="info">
+    <h1>Your attedence is requested in exactly <p id="hoursleft"></p> 
+<img src="newks3.png">
+	</h1>
+
+
+
+
+      <h3>Saturday, Feb 1 2020 12:00 PM</h3>
+
+    </div>
+	
+    <button class ="accept">Fuck yes!!</button>
+    <button class ="regret">Maybe</button>
+  </div>
+</body>
+
   
 </body> 
 </html> 
