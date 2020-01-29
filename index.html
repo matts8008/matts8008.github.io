@@ -104,6 +104,7 @@ button.regret {
 
 button:hover {
   background-color: #cc919a;
+
   transition: .5s;
 }
 
@@ -111,7 +112,7 @@ button:focus {
   outline: 0;
 }
 .sadkitty {	
-      cursor: url("/sadkitty.png"), auto;
+	cursor: url("sadkitty.png"), pointer;
       }
 </style> 
 </head> 
@@ -150,7 +151,7 @@ document.getElementById("hoursleft").innerHTML = timeleft.toFixed(2) + " hours";
     </div>
 	
     <button class="accept">Fuck yes!!</button>
-    <button class="sadkitty">1Maybe</button>
+	<button id="sadkitty">Maybe</button>
   </div>
 </body>
 
